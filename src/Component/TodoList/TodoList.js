@@ -4,13 +4,14 @@ import { FiTrash2 } from 'react-icons/fi';
 
 import './TodoList.css'
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, handleDelete}) => {
     return (
         <div>
             <table className='table'>
 
                 <thead>
                     <tr>
+                        <th scope='col'>#</th>
                         <th scope='col'>Title</th>
                         <th scope='col'>Task</th>
                         <th className='text-center' scope='col'>Delete</th>
@@ -21,9 +22,10 @@ const TodoList = ({todos}) => {
                         todos.map((todo, index) =>{
                             return(
                                 <tr key={index}>
+                                    <td scope='row'>{todo.priority}</td>
                                     <td scope='row'>{todo.title}</td>
                                     <td scope='row'>{todo.task}</td>
-                                    <td className='text-center trash' scope='row'><FiTrash2 /></td>
+                                    <td onClick={()=>handleDelete(todo.priority)} className='text-center text-danger trash' scope='row'><FiTrash2 /></td>
                                 </tr>
                             )
                         })
