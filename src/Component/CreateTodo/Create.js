@@ -66,6 +66,7 @@ const Create = () => {
                   <input
                     onChange={handlePriority}
                     type="number"
+                    placeholder="Add a Priority number for task"
                     id="priority"
                     className=" form-control"
                     value={priority}
@@ -79,6 +80,7 @@ const Create = () => {
                   <input
                     onChange={handleTitle}
                     type="text"
+                    placeholder="Task Name"
                     id="title"
                     className=" form-control"
                     value={title}
@@ -92,6 +94,7 @@ const Create = () => {
                   <input
                     onChange={handleTask}
                     type="text"
+                    placeholder="Task Description"
                     id="task"
                     className="form-control"
                     value={task}
