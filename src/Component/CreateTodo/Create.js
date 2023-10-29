@@ -55,8 +55,8 @@ const Create = () => {
     <div className="todo__create__box">
       <div className="container">
         <div className="create__inner">
-          <h1 className="text-center mb-5 fw-bolder"> Todo List </h1>
-          <div className=" row g-5">
+          <h1 className="text-center mb-5 mt-3 fw-bolder main__title"> Todo List </h1>
+          <div className=" row g-3 g-md-5">
             <div className="col-md-6">
               <form onSubmit={handleSubmit} className="todo__form">
                 <div className="mb-3">
@@ -112,9 +112,9 @@ const Create = () => {
               </form>
             </div>
             <div className="col-md-6">
-              <div className="view__todo">
+              <div className="view__todo mt-5 mt-md-0">
                 {todos.length < 1 ? (
-                  <p className="empty__msz">No Todo's Added Yet! </p>
+                  <p className="empty__msz text-center text-md-start">No Todo's Added Yet! </p>
                 ) : (
                   <TodoList todos={todos} deleteTodo={handleDelete} />
                 )}
