@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TodoList from "../TodoList/TodoList";
 
 const getItemFormLS = () =>{
     const item = localStorage.getItem('Todos')
@@ -64,7 +65,11 @@ const Create = () => {
               </div>
             </form>
           </div>
-          <div className="col-md-6"></div>
+          <div className="col-md-6">
+            <div className="view__todo">
+                {todos.length < 1 ? <p>No Todo's Added Yet! </p> : <TodoList/>}
+            </div>
+          </div>
         </div>
       </div>
     </div>
