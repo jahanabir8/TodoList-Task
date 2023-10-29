@@ -48,7 +48,7 @@ const Create = () => {
                   onChange={handleTitle}
                   type="text"
                   id="title"
-                  value={title}
+                  value={title} required
                 />
               </div>
               <div>
@@ -57,7 +57,7 @@ const Create = () => {
                   onChange={handleTask}
                   type="text"
                   id="task"
-                  value={task}
+                  value={task} required
                 />
               </div>
               <div>
@@ -67,7 +67,7 @@ const Create = () => {
           </div>
           <div className="col-md-6">
             <div className="view__todo">
-                {todos.length < 1 ? <p>No Todo's Added Yet! </p> : <TodoList/>}
+                {todos.length < 1 ? <p>No Todo's Added Yet! </p> : <TodoList todos={todos}/>}
             </div>
           </div>
         </div>

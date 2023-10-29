@@ -1,7 +1,10 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FiTrash2 } from 'react-icons/fi';
 
-const TodoList = () => {
+import './TodoList.css'
+
+const TodoList = ({todos}) => {
     return (
         <div>
             <table className='table'>
@@ -10,13 +13,21 @@ const TodoList = () => {
                     <tr>
                         <th scope='col'>Title</th>
                         <th scope='col'>Task</th>
+                        <th className='text-center' scope='col'>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope='row'></td>
-                        <td scope='row'></td>
-                    </tr>
+                    {
+                        todos.map((todo, index) =>{
+                            return(
+                                <tr key={index}>
+                                    <td scope='row'>{todo.title}</td>
+                                    <td scope='row'>{todo.task}</td>
+                                    <td className='text-center trash' scope='row'><FiTrash2 /></td>
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
 
             </table>
