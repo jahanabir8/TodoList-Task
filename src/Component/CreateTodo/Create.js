@@ -41,7 +41,12 @@ const Create = () => {
     localStorage.setItem('Todos', JSON.stringify(todos))
   }, [todos])
 
-
+  const handleDelete = (priority) =>{
+    const filterTodos = todos.filter((element, index)=>{
+        return element.priority !== priority
+    })
+    setTodos(filterTodos)
+  }
 
   return (
     <div className="todo__create__box">
@@ -89,7 +94,7 @@ const Create = () => {
             </div>
             <div className="col-md-6">
                 <div className="view__todo">
-                    {todos.length < 1 ? <p>No Todo's Added Yet! </p> : <TodoList todos={todos}/>}
+                    {todos.length < 1 ? <p>No Todo's Added Yet! </p> : <TodoList todos={todos} deleteTodo = {handleDelete}/>}
                 </div>
             </div>
           </div>
