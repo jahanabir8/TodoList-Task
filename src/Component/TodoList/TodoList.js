@@ -33,6 +33,7 @@ const TodoList = ({todos, deleteTodo}) => {
                 </tbody>
 
             </table>
+            <button className='btn btn-danger w-100'>Remove Todo List</button>
         </div>
     );
 };
