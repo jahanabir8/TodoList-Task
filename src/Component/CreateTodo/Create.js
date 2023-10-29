@@ -42,26 +42,28 @@ const Create = () => {
         <div className="create__inner row">
           <div className="col-md-6">
             <form onSubmit={handleSubmit} className="todo__form">
-              <div>
-                <label htmlFor="title">Todo Title</label>
+              <div className="mb-3">
+                <label htmlFor="title" className="form-label d-block">Todo Title</label>
                 <input
                   onChange={handleTitle}
                   type="text"
                   id="title"
+                  className=" form-control"
                   value={title} required
                 />
               </div>
-              <div>
-                <label htmlFor="task">Todo Task</label>
+              <div className="mb-3">
+                <label htmlFor="task" className="form-label d-block">Todo Task</label>
                 <input
                   onChange={handleTask}
                   type="text"
                   id="task"
+                  className="form-control"
                   value={task} required
                 />
               </div>
               <div>
-                <button type="submit">Add Todo</button>
+                <button className="btn btn-primary w-100 text-center" type="submit">Add Todo</button>
               </div>
             </form>
           </div>
