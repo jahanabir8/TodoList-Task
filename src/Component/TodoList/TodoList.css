@@ -26,3 +26,9 @@ th {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
+
+.total__task{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}

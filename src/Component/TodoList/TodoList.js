@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -6,9 +6,14 @@ import "./TodoList.css";
 import Search from "./Search";
 
 const TodoList = ({ todos, deleteTodo }) => {
+    const [search, setSearch] = useState('')
+    const handleSearch = (e) =>{
+        setSearch(e.target.value)
+    }
   return (
     <div>
-      <Search />
+      <Search search={search} handleSearch={handleSearch}/>
+      <p className="total__task">Total Task: {todos.length}</p>
       <table className="table">
         <thead>
           <tr>
@@ -21,7 +26,13 @@ const TodoList = ({ todos, deleteTodo }) => {
           </tr>
         </thead>
         <tbody>
-          {todos.map((todo, index) => {
+          {todos.filter((item) => {
+                return search.toLowerCase() === ''
+                  ? item
+                  : item.priority.toLowerCase().includes(search);
+              })
+          
+          .map((todo, index) => {
             return (
               <tr key={index}>
                 <td scope="row">{todo.priority}</td>
