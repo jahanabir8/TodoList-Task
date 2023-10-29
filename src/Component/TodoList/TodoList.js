@@ -5,10 +5,14 @@ import { FiTrash2 } from "react-icons/fi";
 import "./TodoList.css";
 import Search from "./Search";
 
-const TodoList = ({ todos, deleteTodo }) => {
+const TodoList = ({ todos, deleteTodo, setTodos }) => {
     const [search, setSearch] = useState('')
     const handleSearch = (e) =>{
         setSearch(e.target.value)
+    }
+
+    const handleAllTodo = () =>{
+        setTodos([])
     }
   return (
     <div>
@@ -50,7 +54,7 @@ const TodoList = ({ todos, deleteTodo }) => {
           })}
         </tbody>
       </table>
-      <button className="btn btn-danger w-100">Remove Todo List</button>
+      <button onClick={handleAllTodo} className="btn btn-danger w-100">Remove Todo List</button>
     </div>
   );
 };

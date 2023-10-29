@@ -116,7 +116,7 @@ const Create = () => {
                 {todos.length < 1 ? (
                   <p className="empty__msz text-center text-md-start">No Todo's Added Yet! </p>
                 ) : (
-                  <TodoList todos={todos} deleteTodo={handleDelete} />
+                  <TodoList todos={todos} setTodos={setTodos} deleteTodo={handleDelete} />
                 )}
               </div>
             </div>
